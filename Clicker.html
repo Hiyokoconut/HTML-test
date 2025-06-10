@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Chats Cliqueurs</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background-color: #b6b6b6;
+                position: relative;
+    }
+    #click-button {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                padding: 20px;
+                font-size: 20px;
+                z-index: 10;
+    }
+    .chat {
+        position: absolute;
+        width: 100px;
+        height: auto;
+    }
+
+        </style>
+    <script>
+        const bouton = document.getElementById("click-button");
+        bouton.addEventListener("click", () =>   {
+            console.log("click détecté!");
+
+            const chat = document.createElement("img");
+            chat.src = "https://placekitten.com/100";
+            chat.classList.add("chat");
+
+            chat.style.top = Math.random() * window.innerHeight + "px"
+            chat.style.left = Math.random() * window.innerWidth + "px"
+
+            document.body.appendChild(chat);
+    });
+    </script>
+    </head>
+    <body>
+    <button id="click-button">Cliquez ici !</button>
+
+
+    </body>
+    </html>
